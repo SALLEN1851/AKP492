@@ -497,13 +497,13 @@ function ProcessChanges() {
        }
        var isFirstAssist = true;
        if (assistive_forces.hasOwnProperty('Pgravity')) {
-           breakout_text += "<font style='color:rgb(0,148,0);font-size:75%;'>";
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>";
            if (!isFirstAssist) { breakout_text += "&nbsp;&nbsp;"; } isFirstAssist = false;
            breakout_text += "Pgravity = " + assistive_forces.Pgravity.toFixed(2) + "w (";
            breakout_text += (100.0 * assistive_forces.Pgravity / assistive_total).toFixed(2) + "&percnt;)</font>";
        }
        if (assistive_forces.hasOwnProperty('Ptailwind')) {
-           breakout_text += "<font style='color:rgb(67,107,239)';font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0)';font-size:75%;'>"
            if (!isFirstAssist) { breakout_text += "&nbsp;&nbsp;"; } isFirstAssist = false;
            breakout_text += "Ptailwind = " + assistive_forces.Ptailwind.toFixed(2) + "w (";
            breakout_text += (100.0 * assistive_forces.Ptailwind / assistive_total).toFixed(2) + "&percnt;)</font>";
@@ -532,54 +532,54 @@ function ProcessChanges() {
            breakout_text += (net_wind.toFixed(2)) + (ret.units == "metric" ? " km/h" : " mph") + "</b>";
            breakout_text += " is working against you with <b>";
            breakout_text += ret.units == "metric" ? (pfd.dragresistforce.toFixed(2) + " (N)") : ((pfd.dragresistforce/LBF_TO_N).toFixed(2) + " (lbf)");
-           breakout_text += "</b> of force, or <font style='color:rgb(128,0,255)'><b>" + pfd.dragresistpower.toFixed(2) + " watts</b> of power.</font><br>\n";
+           breakout_text += "</b> of force, or <font style='color:rgb(255,0,0)'><b>" + pfd.dragresistpower.toFixed(2) + " watts</b> of power.</font><br>\n";
            resistive_forces.Pdrag = pfd.dragresistpower;
            resistive_total += pfd.dragresistpower;
        }
        if (pfd.rollingresistforce > 0.0) {
            breakout_text += "Rolling resistance is working against you with <b>";
            breakout_text += ret.units == "metric" ? (pfd.rollingresistforce.toFixed(2) + " (N)") : ((pfd.rollingresistforce/LBF_TO_N).toFixed(2) + " (lbf)");
-           breakout_text += "</b> of force, or <font style='color:rgb(173,97,154)'><b>" + pfd.rollingresistpower.toFixed(2) + " watts</b> of power</font>.<br>\n";
+           breakout_text += "</b> of force, or <font style='color:rgb(255,0,0)'><b>" + pfd.rollingresistpower.toFixed(2) + " watts</b> of power</font>.<br>\n";
            resistive_forces.Prollingresist = pfd.rollingresistpower;
            resistive_total += pfd.rollingresistpower;
        }
        if (pfd.drivetrainlosspower > 0.0) {
-           breakout_text += "Drivetrain loss is costing you <font style='color:rgb(255,215,0)'><b>" + pfd.drivetrainlosspower.toFixed(2) + " watts</b> of power</font>.<br>\n";
+           breakout_text += "Drivetrain loss is costing you <font style='color:rgb(255,0,0)'><b>" + pfd.drivetrainlosspower.toFixed(2) + " watts</b> of power</font>.<br>\n";
            resistive_forces.Pdrivetrain = pfd.drivetrainlosspower;
            resistive_total += pfd.drivetrainlosspower;
        }
        if (pfd.brakepower > 0.0) {
-           breakout_text += "You must brake with <font style='color:rgb(245,128,37)'><b>" + pfd.brakepower.toFixed(2) + " watts</b> of power</font>.<br>\n";
+           breakout_text += "You must brake with <font style='color:rgb(255,0,0)'><b>" + pfd.brakepower.toFixed(2) + " watts</b> of power</font>.<br>\n";
            resistive_forces.Pbrake = pfd.brakepower;
            resistive_total += pfd.brakepower;
        }
        var isFirstResist = true;
        if (resistive_forces.hasOwnProperty('Pgravity')) {
-           breakout_text += "<font style='color:rgb(49,120,115);font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>"
            if (!isFirstResist) { breakout_text += "&nbsp;&nbsp;"; } isFirstResist = false;
            breakout_text += "Pgravity = " + resistive_forces.Pgravity.toFixed(2) + "w (";
            breakout_text += (100.0 * resistive_forces.Pgravity / resistive_total).toFixed(2) + "&percnt;)</font>";
        }
        if (resistive_forces.hasOwnProperty('Pdrag')) {
-           breakout_text += "<font style='color:rgb(128,0,255);font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>"
            if (!isFirstResist) { breakout_text += "&nbsp;&nbsp;"; } isFirstResist = false;
            breakout_text += "Pdrag = " + resistive_forces.Pdrag.toFixed(2) + "w (";
            breakout_text += (100.0 * resistive_forces.Pdrag / resistive_total).toFixed(2) + "&percnt;)</font>";
        }
        if (resistive_forces.hasOwnProperty('Prollingresist')) {
-           breakout_text += "<font style='color:rgb(173,97,154);font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>"
            if (!isFirstResist) { breakout_text += "&nbsp;&nbsp;"; } isFirstResist = false;
            breakout_text += "Prollingresist = " + resistive_forces.Prollingresist.toFixed(2) + "w (";
            breakout_text += (100.0 * resistive_forces.Prollingresist / resistive_total).toFixed(2) + "&percnt;)</font>";
        }
        if (resistive_forces.hasOwnProperty('Pdrivetrain')) {
-           breakout_text += "<font style='color:rgb(255,215,0);font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>"
            if (!isFirstResist) { breakout_text += "&nbsp;&nbsp;"; } isFirstResist = false;
            breakout_text += "Pdrivetrainloss = " + resistive_forces.Pdrivetrain.toFixed(2) + "w (";
            breakout_text += (100.0 * resistive_forces.Pdrivetrain / resistive_total).toFixed(2) + "&percnt;)</font>";
        }
        if (resistive_forces.hasOwnProperty('Pbrake')) {
-           breakout_text += "<font style='color:rgb(245,128,37);font-size:75%;'>"
+           breakout_text += "<font style='color:rgb(255,0,0);font-size:75%;'>"
            if (!isFirstResist) { breakout_text += "&nbsp;&nbsp;"; } isFirstResist = false;
            breakout_text += "Pbrake = " + resistive_forces.Pbrake.toFixed(2) + "w (";
            breakout_text += (100.0 * resistive_forces.Pbrake / resistive_total).toFixed(2) + "&percnt;)</font>";
