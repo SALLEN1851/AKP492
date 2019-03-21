@@ -359,13 +359,13 @@ function ProcessChanges() {
                     },
                     { data : gravityassistdata,
                       lines: {show:true, fill:1, lineWidth:0},
-                      color: "rgb(0,148,0)",
+                      color: "rgb(255,0,0)",
                       points: {show:false},
                       shadowSize: 0
                     },
                     { data : windassistdata,
                       lines: {show:true, fill:1, lineWidth:0},
-                      color: "rgb(67,107,239)",
+                      color: "rgb(255,0,0)",
                       points: {show:false},
                       shadowSize: 0
                     },
